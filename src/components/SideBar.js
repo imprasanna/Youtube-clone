@@ -3,11 +3,12 @@ import { Stack } from "@mui/material";
 import { categories } from "../utils/constants";
 import "./SideBar.css";
 
-const SideBar = () => {
+const SideBar = ({ setSelectedCat }) => {
   const [selectedCategory, changeCategorySelection] = useState("New");
   const [hover, setHover] = useState(null);
   function handleClick(catName) {
     changeCategorySelection(catName);
+    setSelectedCat(catName);
   }
   function handleMouseOver(catName) {
     setHover(catName);
